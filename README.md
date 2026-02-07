@@ -52,7 +52,7 @@ The project is designed to be deployed on Vercel.
 2. Import the project in Vercel.
 3. Deploy!
 
-**Production URL:** [https://your-vlog-site.vercel.app](https://your-vlog-site.vercel.app)
+**Production URL:** https://blog-site-seven-sigma.vercel.app
 
 ## Project Structure
 
