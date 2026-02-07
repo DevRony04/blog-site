@@ -1,0 +1,62 @@
+{
+    "contentTypes": [
+        {
+            "sys": {
+                "id": "blogPost",
+                "type": "ContentType"
+            },
+            "name": "Blog Post",
+            "displayField": "title",
+            "fields": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "type": "Symbol",
+                    "required": true,
+                    "localized": false
+                },
+                {
+                    "id": "slug",
+                    "name": "Slug",
+                    "type": "Symbol",
+                    "required": true,
+                    "localized": false,
+                    "validations": [
+                        {
+                            "unique": true
+                        }
+                    ]
+                },
+                {
+                    "id": "excerpt",
+                    "name": "Excerpt",
+                    "type": "Text",
+                    "required": false,
+                    "localized": false
+                },
+                {
+                    "id": "content",
+                    "name": "Content",
+                    "type": "RichText",
+                    "required": true,
+                    "localized": false
+                },
+                {
+                    "id": "coverImage",
+                    "name": "Cover Image",
+                    "type": "Link",
+                    "linkType": "Asset",
+                    "required": false,
+                    "localized": false
+                },
+                {
+                    "id": "publishedDate",
+                    "name": "Published Date",
+                    "type": "Date",
+                    "required": false,
+                    "localized": false
+                }
+            ]
+        }
+    ]
+}
