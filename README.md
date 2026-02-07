@@ -1,21 +1,21 @@
-# Vlog Site - Marketing & Blog
+# Blog Site - Marketing & Blog
 
-A production-ready Next.js application driven by Contentful, built with TypeScript, Tailwind CSS, and shadcn/ui.
+A production-ready Next.js application using in-memory data, built with TypeScript, Tailwind CSS, and shadcn/ui.
 
 ## Tech Stack
 
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS, shadcn/ui
-- **CMS:** Contentful (Delivery API)
+- **Data Source:** In-memory JSON
 - **Deployment:** Vercel
 
 ## Getting Started
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/vlog-site.git
-   cd vlog-site
+   git clone https://github.com/your-username/blog-site.git
+   cd blog-site
    ```
 
 2. **Install dependencies:**
@@ -23,42 +23,26 @@ A production-ready Next.js application driven by Contentful, built with TypeScri
    npm install
    ```
 
-3. **Configure Environment Variables:**
-   Create a `.env.local` file in the root directory:
-   ```env
-   CONTENTFUL_SPACE_ID=your_space_id
-   CONTENTFUL_ACCESS_TOKEN=your_access_token
-   ```
-
-4. **Run the development server:**
+3. **Run the development server:**
    ```bash
    npm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-### Local Data Handling
-The application currently uses **Local Mock Data** found in `src/lib/mock-data.ts`.
-This means no Contentful API Keys are required to run the project.
+### Data Handling
+The application uses in-memory data found in `src/lib/mock-data.ts`.
 
-To add or edit posts, simply modify the `MOCK_POSTS` array in `src/lib/mock-data.ts`.
+To add or edit posts, modify the `MOCK_POSTS` array in `src/lib/mock-data.ts`.
 
-### Contentful Integration (Optional)
-If you wish to switch back to real Contentful data in the future:
-1. Uncomment the client creation code in `src/lib/contentful.ts`.
-2. Add your credentials to `.env.local`.
-3. Restore the API fetching logic in `getPosts` and `getPostBySlug`.
-
-### BlogPost Model
-| Field | Type | ID | Required |
-|-------|------|----|----------|
-| Title | Short text | `title` | Yes |
-| Slug | Short text | `slug` | Yes (Unique) |
-| Excerpt | Long text | `excerpt` | No |
-| Content | Rich text | `content` | Yes |
-| Cover Image | Media | `coverImage` | No |
-| Published Date | Date and time | `publishedDate` | No |
-
-![Contentful Model Screenshot](https://via.placeholder.com/800x400?text=Contentful+Model+Screenshot)
+### Data Model
+| Field | Type | Required |
+|-------|------|----------|
+| Title | String | Yes |
+| Slug | String | Yes (Unique) |
+| Excerpt | String | No |
+| Content | Rich Text / HTML | Yes |
+| Cover Image | String (URL) | No |
+| Published Date | Date String | No |
 
 ## Deployment
 
@@ -66,8 +50,7 @@ The project is designed to be deployed on Vercel.
 
 1. Push your code to GitHub.
 2. Import the project in Vercel.
-3. Add the `CONTENTFUL_SPACE_ID` and `CONTENTFUL_ACCESS_TOKEN` environment variables in Vercel project settings.
-4. Deploy!
+3. Deploy!
 
 **Production URL:** [https://your-vlog-site.vercel.app](https://your-vlog-site.vercel.app)
 
@@ -76,7 +59,7 @@ The project is designed to be deployed on Vercel.
 - `src/app`: App Router pages and layouts
 - `src/components`: UI components (Hero, PostCard, RichText)
 - `src/components/ui`: shadcn/ui primitives
-- `src/lib`: Contentful client and data fetching utilities
+- `src/lib`: Data fetching utilities
 
 ## Features
 
