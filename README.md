@@ -7,7 +7,7 @@ A production-ready Next.js application using in-memory data, built with TypeScri
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS, shadcn/ui
-- **Data Source:** In-memory JSON
+- **Data Source:** In-memory JSON (Default) / Contentful (Optional)
 - **Deployment:** Vercel
 
 ## Getting Started
@@ -23,7 +23,15 @@ A production-ready Next.js application using in-memory data, built with TypeScri
    npm install
    ```
 
-3. **Run the development server:**
+
+3. **Configure Environment Variables (Optional for Contentful):**
+   Create a `.env.local` file in the root directory:
+   ```env
+   CONTENTFUL_SPACE_ID=your_space_id
+   CONTENTFUL_ACCESS_TOKEN=your_access_token
+   ```
+
+4. **Run the development server:**
    ```bash
    npm run dev
    ```
