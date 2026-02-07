@@ -16,7 +16,7 @@ export function Hero() {
             <Link href="/blog">Read the Blog</Link>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <Link href="https://github.com/deepyaman/vlog-site" target="_blank">
+            <Link href="https://github.com/DevRony04/blog-site" target="_blank">
               View on GitHub
             </Link>
           </Button>
